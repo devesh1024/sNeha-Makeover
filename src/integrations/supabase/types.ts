@@ -14,7 +14,180 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      gallery_items: {
+        Row: {
+          alt_text: string | null
+          category: string
+          created_at: string
+          display_order: number
+          featured: boolean
+          id: string
+          image_url: string
+          published: boolean
+          title: string
+        }
+        Insert: {
+          alt_text?: string | null
+          category?: string
+          created_at?: string
+          display_order?: number
+          featured?: boolean
+          id?: string
+          image_url: string
+          published?: boolean
+          title: string
+        }
+        Update: {
+          alt_text?: string | null
+          category?: string
+          created_at?: string
+          display_order?: number
+          featured?: boolean
+          id?: string
+          image_url?: string
+          published?: boolean
+          title?: string
+        }
+        Relationships: []
+      }
+      inquiries: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          inquiry_type: string
+          message: string | null
+          name: string
+          phone: string
+          preferred_date: string | null
+          service_or_product: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          inquiry_type?: string
+          message?: string | null
+          name: string
+          phone: string
+          preferred_date?: string | null
+          service_or_product?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          inquiry_type?: string
+          message?: string | null
+          name?: string
+          phone?: string
+          preferred_date?: string | null
+          service_or_product?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          additional_images: string[]
+          availability: string
+          category: string
+          created_at: string
+          description: string | null
+          display_order: number
+          featured: boolean
+          id: string
+          image_url: string | null
+          name: string
+          price: number | null
+          published: boolean
+          sale_price: number | null
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          additional_images?: string[]
+          availability?: string
+          category?: string
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          featured?: boolean
+          id?: string
+          image_url?: string | null
+          name: string
+          price?: number | null
+          published?: boolean
+          sale_price?: number | null
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          additional_images?: string[]
+          availability?: string
+          category?: string
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          featured?: boolean
+          id?: string
+          image_url?: string | null
+          name?: string
+          price?: number | null
+          published?: boolean
+          sale_price?: number | null
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      site_settings: {
+        Row: {
+          address: string | null
+          business_name: string
+          email: string | null
+          id: string
+          instagram: string | null
+          logo_url: string | null
+          maps_url: string | null
+          opening_hours: string | null
+          phone: string | null
+          tagline: string | null
+          updated_at: string
+          whatsapp: string | null
+        }
+        Insert: {
+          address?: string | null
+          business_name?: string
+          email?: string | null
+          id?: string
+          instagram?: string | null
+          logo_url?: string | null
+          maps_url?: string | null
+          opening_hours?: string | null
+          phone?: string | null
+          tagline?: string | null
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Update: {
+          address?: string | null
+          business_name?: string
+          email?: string | null
+          id?: string
+          instagram?: string | null
+          logo_url?: string | null
+          maps_url?: string | null
+          opening_hours?: string | null
+          phone?: string | null
+          tagline?: string | null
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
