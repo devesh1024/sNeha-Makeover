@@ -1409,7 +1409,7 @@ A subtle watermark-style version of the logo may be used in selected sections/ba
 
 Do not add:
 
-Lovable branding
+Unnecessary third-party branding
 
 Builder branding
 
@@ -1536,16 +1536,6 @@ Build the initial version completely rather than leaving major sections as empty
 Where real business information such as phone number, address, Instagram, opening hours, or product catalogue data is missing, use clearly identifiable editable placeholders instead of fabricating information.
 
 The final result should look ready to show the parlour owner for approval.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9206bd89-91a0-4c59-af69-80210a287d4b).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 

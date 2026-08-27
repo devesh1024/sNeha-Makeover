@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import heroBg from "@/assets/hero-bg.jpg";
-import neha from "@/assets/neha.jpg.asset.json";
+import neha from "@/assets/neha.jpg";
 import { siteConfig, whatsappLink } from "@/config/site";
 import { serviceCategories, featuredServices, formatPrice } from "@/data/services";
 import { galleryQuery, productsQuery } from "@/lib/content";
@@ -112,7 +112,7 @@ function HomePage() {
               aria-hidden="true"
             />
             <img
-              src={neha.url}
+              src={neha}
               alt="Neha, the beautician behind sNeha's Makeover"
               loading="lazy"
               className="relative w-full object-cover shadow-[var(--shadow-soft)]"

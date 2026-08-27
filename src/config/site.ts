@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/Logo.png";
 
 /**
  * Single source of truth for business information.
@@ -8,7 +8,7 @@ export const siteConfig = {
   name: "sNeha's Makeover",
   tagline: "Khud Se Milo – Naye Look Ke Saath.",
   intro: "Makeup, Hair, Nails & Skin Care crafted to bring out your best look.",
-  logoUrl: logo.url,
+  logoUrl: logo,
 
   // Contact — replace placeholders with the real details.
   phone: "87801 72428",
