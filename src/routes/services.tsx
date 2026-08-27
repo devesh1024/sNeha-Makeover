@@ -28,7 +28,9 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
-  const [openCategory, setOpenCategory] = useState<string | null>(serviceCategories[0].slug);
+  const [openCategory, setOpenCategory] = useState<string | null>(
+    serviceCategories[0]?.slug ?? null,
+  );
 
   const filters = ["All", ...serviceCategories.map((c) => c.short)];
 
