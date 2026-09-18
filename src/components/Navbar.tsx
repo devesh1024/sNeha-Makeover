@@ -32,17 +32,21 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-        scrolled || open
-          ? "bg-black/95 backdrop-blur-sm border-b border-gold/20"
-          : "bg-gradient-to-b from-black/70 to-transparent"
-      }`}
-    >
-      <nav
-        aria-label="Main"
-        className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8 md:py-4"
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
+          scrolled
+            ? "bg-black/95 backdrop-blur-sm border-b border-gold/20"
+            : open
+              ? "bg-transparent border-b border-gold/20"
+              : "bg-gradient-to-b from-black/70 to-transparent"
+        }`}
       >
+        <nav
+          aria-label="Main"
+          className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8 md:py-4 ${
+            open ? "bg-black/95" : ""
+          }`}
+        >
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label={`${siteConfig.name} home`}>
           <img
             src={siteConfig.logoUrl}
@@ -100,7 +104,7 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="fixed inset-0 top-[64px] z-40 flex flex-col bg-black px-6 pb-10 pt-8 lg:hidden">
+        <div className="mobile-menu fixed inset-0 top-[64px] z-40 flex flex-col px-6 pb-10 pt-8 lg:hidden">
           <ul className="flex flex-col gap-2">
             {links.map((l) => (
               <li key={l.to} className="border-b border-white/10">

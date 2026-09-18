@@ -11,7 +11,7 @@ export const siteConfig = {
   logoUrl: logo,
 
   // Contact — replace placeholders with the real details.
-  phone: "87801 72428",
+  phone: "+91 8780172428",
   whatsapp: "918780172428", // country code + number, digits only
   email: "solankineha855@gmail.com", // PLACEHOLDER
   address: "No. 222, near Police Station Road, Ward 12B, Gandhidham, Gujarat 370201", // PLACEHOLDER
