@@ -32,15 +32,15 @@ export function Navbar() {
   }, [open]);
 
   return (
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-          scrolled
-            ? "bg-black/95 backdrop-blur-sm border-b border-gold/20"
-            : open
+        <header
+          className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
+            open
               ? "bg-transparent border-b border-gold/20"
-              : "bg-gradient-to-b from-black/70 to-transparent"
-        }`}
-      >
+              : scrolled
+                ? "bg-black/95 backdrop-blur-sm border-b border-gold/20"
+                : "bg-gradient-to-b from-black/70 to-transparent"
+          }`}
+        > 
         <nav
           aria-label="Main"
           className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8 md:py-4 ${
