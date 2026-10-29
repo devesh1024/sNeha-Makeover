@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import heroBg from "@/assets/hero-bg.jpg";
 import neha from "@/assets/neha.jpg";
 import { siteConfig, whatsappLink } from "@/config/site";
-import { serviceCategories, featuredServices, formatPrice } from "@/data/services";
+import { serviceCategories, featuredServices } from "@/data/services";
 import { galleryQuery, productsQuery } from "@/lib/content";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -155,7 +155,7 @@ function HomePage() {
             eyebrow="What we do"
             tone="dark"
             title="Services"
-            description="Five service families, one studio. Every category has its own detailed menu with starting prices."
+            description="Five service families, one studio. Every category has its own detailed menu."
           />
           <div className="mt-14 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-5">
             {serviceCategories.map((category, i) => (
@@ -242,7 +242,7 @@ function HomePage() {
           <SectionHeading
             eyebrow="Popular"
             title="Featured services"
-            description="A few of the most requested treatments. The full menu with every category and price is on the services page."
+            description="A few of the most requested treatments. The full menu with every category is on the services page."
           >
             <Link to="/services" className="btn btn-dark mt-8">
               View Full Menu
@@ -252,18 +252,25 @@ function HomePage() {
           <ul className="divide-y divide-border border-y border-border">
             {featuredServices.map((service, i) => (
               <Reveal as="li" key={service.name} delay={i * 50}>
-                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-5">
+                <Link
+                  to="/services"
+                  hash={service.category.toLowerCase()}
+                  className="group grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-5 py-5 sm:gap-7"
+                >
+                  <span className="font-serif text-sm text-gold-muted">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div className="min-w-0">
                     <p className="eyebrow text-gold-muted">{service.category}</p>
                     <p className="mt-2 font-serif text-xl">{service.name}</p>
                   </div>
-                  <div className="shrink-0 text-right">
-                    <p className="text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground">
-                      Starting From
-                    </p>
-                    <p className="text-lg">{formatPrice(service.price)}</p>
-                  </div>
-                </div>
+                  <span
+                    aria-hidden="true"
+                    className="text-gold-dark transition-transform duration-500 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </ul>

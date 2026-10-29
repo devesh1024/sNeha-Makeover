@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { serviceCategories, formatPrice } from "@/data/services";
+import { serviceCategories } from "@/data/services";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
 import { FilterBar } from "@/components/FilterBar";
@@ -9,16 +9,16 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Prices | sNeha's Makeover" },
+      { title: "Services | sNeha's Makeover" },
       {
         name: "description",
         content:
-          "Makeup, hair care, skin care, nail enhancement and waxing services at sNeha's Makeover, with starting prices for each treatment.",
+          "Makeup, hair care, skin care, nail enhancement and waxing services at sNeha's Makeover.",
       },
-      { property: "og:title", content: "Services & Prices | sNeha's Makeover" },
+      { property: "og:title", content: "Services | sNeha's Makeover" },
       {
         property: "og:description",
-        content: "Makeup, hair, skin, nails and waxing services with starting prices.",
+        content: "Makeup, hair, skin, nails and waxing services at sNeha's Makeover.",
       },
     ],
   }),
@@ -66,8 +66,8 @@ function ServicesPage() {
           <SectionHeading
             eyebrow="Menu"
             tone="dark"
-            title="Services & Prices"
-            description="Our complete service menu. Prices marked “Starting From” vary with hair length, product choice and the look you have in mind."
+            title="Our Services"
+            description="Our complete service menu. For a quote tailored to your hair length, product choice and the look you have in mind, get in touch and we will guide you."
           />
         </div>
       </section>
@@ -147,29 +147,23 @@ function ServicesPage() {
                             <div key={group.title}>
                               <h3 className="eyebrow text-foreground">{group.title}</h3>
                               <div className="mt-3 h-px w-10 bg-gold" aria-hidden="true" />
-                              <ul className="mt-5 space-y-4">
+                              <ul className="mt-4">
                                 {group.items.map((item) => (
                                   <li
                                     key={item.name}
-                                    className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4"
+                                    className="group/item flex items-start gap-4 border-b border-border/70 py-4 last:border-b-0"
                                   >
+                                    <span
+                                      aria-hidden="true"
+                                      className="mt-[0.4rem] h-1.5 w-1.5 shrink-0 rotate-45 border border-gold bg-transparent transition-colors duration-300 group-hover/item:bg-gold"
+                                    />
                                     <span className="min-w-0">
                                       <span className="block text-sm text-foreground">{item.name}</span>
                                       {item.note ? (
-                                        <span className="block text-xs text-muted-foreground">
+                                        <span className="mt-0.5 block text-xs text-muted-foreground">
                                           {item.note}
                                         </span>
                                       ) : null}
-                                    </span>
-                                    <span className="shrink-0 text-right">
-                                      {item.startingFrom ? (
-                                        <span className="block text-[0.6rem] uppercase tracking-[0.18em] text-muted-foreground">
-                                          Starting From
-                                        </span>
-                                      ) : null}
-                                      <span className="block text-sm font-medium text-foreground">
-                                        {formatPrice(item.price)}
-                                      </span>
                                     </span>
                                   </li>
                                 ))}
